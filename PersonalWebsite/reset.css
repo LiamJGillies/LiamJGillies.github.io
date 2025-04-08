@@ -1,0 +1,52 @@
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the entire webpage */
+body {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  background-color: #f0f0f0; /* Optional: Add a background color */
+}
+
+/* Remove default styles for lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default styles for links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset heading and paragraph margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Set a consistent base font size and family */
+body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Remove border and padding from images */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}

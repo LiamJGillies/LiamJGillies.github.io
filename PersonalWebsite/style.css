@@ -1,0 +1,113 @@
+/* General Styles */
+.content {
+  max-width: 1280px; /* Set a maximum width for the content */
+  width: 100%; /* Full width of the viewport */
+  background-color: #fff; /* Optional: Add a background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+  height: fit-content;
+}
+
+/* Navbar Styles */
+#navbar {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+  background-color: #333; /* Background color for the nav bar */
+  padding: 10px 10px; /* Padding around the nav bar */
+  width: 100%;
+  margin: 0; /* Remove default margin */
+  position: fixed; /* Fix the navbar to the top */
+}
+
+nav ul {
+  display: flex; /* Use flexbox for the list */
+  list-style: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px; /* Add spacing between list items */
+}
+
+nav ul li a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 5px 10px; /* Add padding around links */
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: #575757; /* Change background on hover */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+#mainheading {
+  position: relative; /* Position it relative to the container */
+  top: 100px;
+  left: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 200px;
+  margin: 20px;
+  margin-top: 50px;
+}
+/* masked */
+.heading-container {
+  position: absolute; /* Position it relative to the container */
+  top: 0;
+  left: 0;
+  width: fit-content;
+  font-size: 4rem;
+  color: currentColor; /* Default black text */
+  z-index: 1; /* Ensure it is below the masked text */
+}
+/* fallback */
+.fallback-text {
+  position: absolute; /* Position it relative to the container */
+  top: 0;
+  left: 0;
+  font-size: 4rem;
+  color: rgb(0, 0, 0); /* Make the text transparent */
+  background: none; /* Default background */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  background-clip: text; /* Standard property for compatibility */
+  transition: background 0.3s ease; /* Smooth transition for color changes */
+  z-index: 2; /* Ensure it is above the fallback text */
+  pointer-events: none; /* Prevent interaction with this layer */
+}
+
+/* Heading Styles */
+h1 {
+  position: relative;
+  font-size: 4rem;
+  color: black; /* Default text color */
+  transition: color 0.3s ease; /* Smooth transition for fallback */
+  mask-image: none; /* Default mask */
+  -webkit-mask-image: none; /* Default mask for WebKit browsers */
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Circle Mask Effect */
+.circle-mask {
+  position: fixed;
+  width: 150px; /* Circle diameter */
+  height: 150px;
+  border-radius: 50%; /* Make it a circle */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Image Styles */
+#img1,
+#img2,
+#img3,
+#img4 {
+  display: flex;
+  border: 1px solid black;
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  margin: 15px;
+}
