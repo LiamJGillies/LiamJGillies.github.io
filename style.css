@@ -2,11 +2,37 @@
 .content {
   max-width: 1280px; /* Set a maximum width for the content */
   width: 100%; /* Full width of the viewport */
-  background-color: #fff; /* Optional: Add a background color */
+  background-color: #ffffff; /* Optional: Add a background color */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
-  height: fit-content;
+  height: 2000px;
+  z-index: 1;
 }
 
+#container3D {
+  padding-bottom: 200px;
+  height: 50px;
+  width: auto;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center; /* Center the 3D container */
+  z-index: 0;
+}
+
+#whiteOverlay {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* Set the background color to white */
+  width: 100%; /* Full width */
+  max-width: 1280px;
+  height: 100%; /* Adjust the height as needed */
+  position: absolute; /* Position it over #container3D */
+  top: 10; /* Adjust the top position to align with #container3D */
+  z-index: 1; /* Ensure it appears in front of #container3D */
+  pointer-events: none; /* Allow interactions to pass through to #container3D */
+}
 /* Navbar Styles */
 #navbar {
   display: flex;
@@ -17,6 +43,7 @@
   width: 100%;
   margin: 0; /* Remove default margin */
   position: fixed; /* Fix the navbar to the top */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 nav ul {
@@ -43,14 +70,17 @@ nav ul li a:hover {
 }
 
 #mainheading {
+  background-color: #ffffff;
   position: relative; /* Position it relative to the container */
-  top: 100px;
-  left: 100px;
+  top: 10px;
+  left: 10px;
   display: flex;
   justify-content: center;
-  padding: 200px;
-  margin: 20px;
+  padding: 100px;
+  margin-left: 30px;
   margin-top: 50px;
+  margin-bottom: 100px;
+  width: 1000px;
 }
 /* masked */
 .heading-container {
@@ -99,29 +129,42 @@ h1 {
   z-index: 1000; /* Ensure it stays on top */
 }
 
-
+#links {
+  display: grid; /* Enable grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+  grid-gap: 10px; /* Add spacing between grid items */
+  justify-content: center; /* Center items horizontally */
+  align-items: top; /* Center items vertically */
+  margin: 0 auto; /* Center the grid container */
+}
 
 .imageContainer:hover {
   height: 300px; /* Increase height on hover */
-  
 }
 .imageContainer:hover::before {
   opacity: 0; /* Make the background disappear on hover */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+.imageContainer:hover .imageText {
+  opacity: 0; /* Fade out the text on hover */
   transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
 .imageContainer {
   position: relative; /* Position relative to the container */
   width: 500px;
   height: 150px;
-  margin: 10px;
+  margin: 10px auto;
   z-index: 10;
   overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
   display: flex;
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px;
+  padding: 0px;
   object-fit: cover; /* Cover the entire area */
   z-index: 5; /* Ensure it stays on top */
   transition: height 0.5s ease; /* Smooth animation for height change */
+}
+
+.imageContainer {
+  display: grid; /* Use grid layout for the container */
 }
 
 .imageContainer::before {
@@ -151,4 +194,6 @@ h1 {
   padding: 10px; /* Padding around the text */
   border-radius: 5px; /* Rounded corners */
   z-index: 15;
+  opacity: 1; /* Fully visible by default */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
