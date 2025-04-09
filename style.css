@@ -68,7 +68,6 @@ nav ul li a:hover {
   top: 0;
   left: 0;
   font-size: 4rem;
-  color: rgb(0, 0, 0); /* Make the text transparent */
   background: none; /* Default background */
   -webkit-background-clip: text; /* Clip the background to the text */
   background-clip: text; /* Standard property for compatibility */
@@ -87,6 +86,7 @@ h1 {
   -webkit-mask-image: none; /* Default mask for WebKit browsers */
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  cursor: default;
 }
 
 /* Circle Mask Effect */
@@ -99,15 +99,56 @@ h1 {
   z-index: 1000; /* Ensure it stays on top */
 }
 
-/* Image Styles */
-#img1,
-#img2,
-#img3,
-#img4 {
-  display: flex;
-  border: 1px solid black;
+
+
+.imageContainer:hover {
+  height: 300px; /* Increase height on hover */
+  
+}
+.imageContainer:hover::before {
+  opacity: 0; /* Make the background disappear on hover */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+.imageContainer {
+  position: relative; /* Position relative to the container */
   width: 500px;
-  height: auto;
+  height: 150px;
+  margin: 10px;
+  z-index: 10;
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+  display: flex;
+  border: 1px solid rgb(0, 0, 0);
   padding: 10px;
-  margin: 15px;
+  object-fit: cover; /* Cover the entire area */
+  z-index: 5; /* Ensure it stays on top */
+  transition: height 0.5s ease; /* Smooth animation for height change */
+}
+
+.imageContainer::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position it relative to .imageContainer */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the full width */
+  height: 100%; /* Cover the full height */
+  background: #000000a9; /* Solid color */
+  z-index: 5; /* Place it above .imageText */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.imageContainer img {
+  width: 100%; /* Full width of the container */
+  object-fit: cover;
+}
+.imageText {
+  position: absolute; /* Position absolute to the container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+  color: white; /* Text color */
+  font-size: 2rem; /* Font size */
+  text-align: center; /* Center the text */
+  padding: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 15;
 }

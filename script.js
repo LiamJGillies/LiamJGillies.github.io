@@ -29,13 +29,9 @@ function applyCurrentColor() {
   heading.style.color = "transparent"; // Make the text transparent to show the gradient
 }
 
-// Apply the initial random color on page load
-applyCurrentColor();
-
 // Generate a new random color when the mouse enters the <h1>
 heading2.addEventListener("mouseover", () => {
   console.log("Mouse entered the <h1>");
-  getRandomColor(); // Generate a new random color
   currentColor = getRandomColor(); // Generate a new random color
   applyCurrentColor(); // Apply the new color
 });
