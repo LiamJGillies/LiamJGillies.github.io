@@ -9,7 +9,7 @@
 body {
   height: 100vh; /* Full viewport height */
   margin: 0; /* Remove default margin */
-  background-color: #f0f0f0; /* Optional: Add a background color */
+  background-color: #f0f0f0; /* Optional: Add a background color */'
 }
 
 /* Remove default styles for lists */
@@ -21,7 +21,6 @@ ol {
 /* Remove default styles for links */
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 /* Reset heading and paragraph margins */

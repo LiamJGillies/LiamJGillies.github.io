@@ -1,4 +1,8 @@
 /* General Styles */
+body {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center;
+}
 .content {
   max-width: 1280px; /* Set a maximum width for the content */
   width: 100%; /* Full width of the viewport */
